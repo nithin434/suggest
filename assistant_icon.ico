@@ -1,0 +1,14 @@
+
+from PIL import Image, ImageDraw
+
+def create_icon():
+    # Create a 32x32 image with a transparent background
+    img = Image.new('RGBA', (32, 32), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+    
+    # Draw a simple pen icon
+    draw.polygon([(5, 5), (27, 5), (27, 27), (5, 27)], 
+                fill=(65, 105, 225, 255))  # Royal Blue
+    
+    # Save as ICO
+    img.save('assistant_icon.ico', format='ICO')
